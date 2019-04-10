@@ -19,6 +19,7 @@
 		940E79E9225C8E83001A52DF /* Insta_Clone_FirebaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940E79E8225C8E83001A52DF /* Insta_Clone_FirebaseUITests.swift */; };
 		940E79F7225C9145001A52DF /* signInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940E79F6225C9145001A52DF /* signInVC.swift */; };
 		94DE94BD225DD98300B33DA2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94DE94BC225DD98300B33DA2 /* GoogleService-Info.plist */; };
+		94DE94BF225E041500B33DA2 /* select-picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 94DE94BE225E041400B33DA2 /* select-picture.png */; };
 		B86EB09A67D0EADD5646B001 /* Pods_Insta_Clone_FirebaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C1EFA41601A6DDEAA713BD /* Pods_Insta_Clone_FirebaseTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		940E79EA225C8E83001A52DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		940E79F6225C9145001A52DF /* signInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signInVC.swift; sourceTree = "<group>"; };
 		94DE94BC225DD98300B33DA2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		94DE94BE225E041400B33DA2 /* select-picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select-picture.png"; sourceTree = "<group>"; };
 		CF091B7CC6D6B02FA555DB55 /* Pods_Insta_Clone_Firebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Insta_Clone_Firebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D05D3EBC115ECDED0A463456 /* Pods-Insta Clone Firebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insta Clone Firebase.release.xcconfig"; path = "Target Support Files/Pods-Insta Clone Firebase/Pods-Insta Clone Firebase.release.xcconfig"; sourceTree = "<group>"; };
 		F5510D3F2D2FFF8EEE02DAC9 /* Pods_Insta_Clone_FirebaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Insta_Clone_FirebaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 		940E79C5225C8E83001A52DF /* Insta Clone Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				94DE94BE225E041400B33DA2 /* select-picture.png */,
 				94DE94BC225DD98300B33DA2 /* GoogleService-Info.plist */,
 				940E79C6225C8E83001A52DF /* AppDelegate.swift */,
 				940E79C8225C8E83001A52DF /* feedVC.swift */,
@@ -292,6 +295,7 @@
 				94DE94BD225DD98300B33DA2 /* GoogleService-Info.plist in Resources */,
 				940E79D0225C8E83001A52DF /* Assets.xcassets in Resources */,
 				940E79CE225C8E83001A52DF /* Main.storyboard in Resources */,
+				94DE94BF225E041500B33DA2 /* select-picture.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
