@@ -63,11 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let tabBar = board.instantiateViewController(withIdentifier: "tabBar") as! UITabBarController     // for tab bar Controller in Main.Storyboard, make up/add an ID string in 'Identity' eg "tabBar" - use this here
             // beware auto-complete of .instantiate*Initial*ViewController :-/
             window?.rootViewController = tabBar     // like dragging storyboard entry-point arrow to TabBarController (in code)
-            
-            
         }
-
     }
-
 }
 
