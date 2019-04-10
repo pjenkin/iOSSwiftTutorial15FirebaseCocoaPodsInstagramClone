@@ -1,0 +1,27 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Insta Clone Firebase' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Insta Clone Firebase
+
+  target 'Insta Clone FirebaseTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Insta Clone FirebaseUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+
+pod 'Firebase/Core'
+
+# https://github.com/invertase/react-native-firebase/issues/1764#issuecomment-452178852
+post_install do |installer|
+  system("mkdir -p Pods/Headers/Public/FirebaseCore && cp Pods/FirebaseCore/Firebase/Core/Public/* Pods/Headers/Public/FirebaseCore/")
+end

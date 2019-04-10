@@ -37,6 +37,10 @@ class signInVC: UIViewController {
     @IBAction func signInBtnClicked(_ sender: Any) {
         performSegue(withIdentifier: "toTabBar", sender: nil)
     }
+    
     @IBAction func signUpBtnClicked(_ sender: Any) {
+        // if emailText.text != "" && passwordText.text !
+        // Auth.auth().createUser(withEmail: emailText.text!, password: )
+        
     }
 }
