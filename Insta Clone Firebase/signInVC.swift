@@ -47,7 +47,46 @@ class signInVC: UIViewController {
     */
 
     @IBAction func signInBtnClicked(_ sender: Any) {
-        performSegue(withIdentifier: "toTabBar", sender: nil)
+        //performSegue(withIdentifier: "toTabBar", sender: nil)
+        
+        if emailText.text != "" && passwordText.text != ""
+        {
+            Auth.auth().signIn(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
+                if error != nil
+                {
+                        // if there's an error, tell user
+                        // copy/paste of below code, & alter to allow sepcific error message!
+                        let alert = UIAlertController(title: "Error", message:error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        let okButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+                        // NB alert is Controller, ok is Action
+                        
+                        alert.addAction(okButton)
+                        self.present(alert, animated: true, completion: nil)
+                        // set up a warning to user in case of eror
+
+                }
+                else
+                {
+                        // if no error, signed-in ok
+                        // go on to app
+                    print("successful sign in")
+                    self.performSegue(withIdentifier: "toTabBar", sender: nil)
+                    // NB *self*.performSegue needed here because in a closure code-block
+                }
+            }
+            )
+        }
+        else
+        {
+            let alert = UIAlertController(title: "Error", message: "Problem signing up", preferredStyle: UIAlertControllerStyle.alert)
+            
+            let okButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+            
+            alert.addAction(okButton)
+            self.present(alert, animated: true, completion: nil)
+            // set up a warning to user in case of eror
+        }
     }
     
     @IBAction func signUpBtnClicked(_ sender: Any) {
@@ -56,7 +95,7 @@ class signInVC: UIViewController {
             Auth.auth().createUser(withEmail: emailText.text!, password: passwordText.text!) { (user, error) in
                 if error != nil
                 {   // if there's an error, tell user
-                    // copy/paste of below code, & alter to allow sepcific error message!
+                    // copy/paste of below code, & alter to allow specific error message!
                     let alert = UIAlertController(title: "Error", message:error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
                     
                     let okButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
@@ -71,8 +110,9 @@ class signInVC: UIViewController {
                     print(user?.user.email) // NB extra .user  https://stackoverflow.com/a/50419010
                     // print(user?.email)
                     print("successful sign-up")
+                    self.performSegue(withIdentifier: "toTabBar", sender: nil)  // proceed into app
                 }
-            }  // completion:<#T##AuthDataResultCallback?##AuthDataResultCallback?##(AuthDataResult?, Error?) -> Void#> NB pressing enter can expand into block if appropriate, as above wit (user, error) in ....
+            }  // completion: NB pressing enter can expand into block if appropriate, as above wit (user, error) in ....
         
         } else
         {
