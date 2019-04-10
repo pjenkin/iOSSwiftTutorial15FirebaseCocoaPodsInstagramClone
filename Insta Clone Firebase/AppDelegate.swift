@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        rememberLogin()          // if user logged in already, skip signIn ViewController screen
         
         FirebaseApp.configure()  // this line d'require GoogleService-Info.plist in project - working with Firebase registration
         return true
@@ -49,6 +50,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    /// bespoke function to remember user logged in to this app
+    func rememberLogin()
+    {
+        let user: String? = UserDefaults.standard.string(forKey: "user")    // record with key user
+        
+        // skip login to main app controller using UIStoryboard, if already looged-in
+        
+        if user != nil
+        {
+            let board : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)  // NB type before assign/instantiate; also case sensitive "Main"
+            let tabBar = board.instantiateViewController(withIdentifier: "tabBar") as! UITabBarController     // for tab bar Controller in Main.Storyboard, make up/add an ID string in 'Identity' eg "tabBar" - use this here
+            // beware auto-complete of .instantiate*Initial*ViewController :-/
+            window?.rootViewController = tabBar     // like dragging storyboard entry-point arrow to TabBarController (in code)
+            
+            
+        }
+
+    }
 
 }
 

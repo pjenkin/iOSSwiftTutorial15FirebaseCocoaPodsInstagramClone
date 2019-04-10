@@ -52,29 +52,39 @@ class signInVC: UIViewController {
         if emailText.text != "" && passwordText.text != ""
         {
             Auth.auth().signIn(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
-                if error != nil
-                {
-                        // if there's an error, tell user
-                        // copy/paste of below code, & alter to allow sepcific error message!
-                        let alert = UIAlertController(title: "Error", message:error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                    if error != nil
+                    {
+                            // if there's an error, tell user
+                            // copy/paste of below code, & alter to allow sepcific error message!
+                            let alert = UIAlertController(title: "Error", message:error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
                         
-                        let okButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
-                        // NB alert is Controller, ok is Action
+                            let okButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+                            // NB alert is Controller, ok is Action
                         
-                        alert.addAction(okButton)
-                        self.present(alert, animated: true, completion: nil)
-                        // set up a warning to user in case of eror
+                            alert.addAction(okButton)
+                            self.present(alert, animated: true, completion: nil)
+                            // set up a warning to user in case of eror
 
+                    }
+                    else
+                    {
+                        // if already logged-in, remember details
+                        // remembering-logged-in-type function in AppDelegate.swift (qv)
+
+                        UserDefaults.standard.set(user!.user.email, forKey: "user") // NB extra .user  https://stackoverflow.com/a/50419010
+                        UserDefaults.standard.synchronize()     // must synchronise
+                        
+                        let delegate : AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                        
+                        delegate.rememberLogin()
+                        
+                            // if no error, signed-in ok
+                            // go on to app
+                        print("successful sign in")
+                        // self.performSegue(withIdentifier: "toTabBar", sender: nil)
+                        // NB *self*.performSegue needed here because in a closure code-block
+                    }
                 }
-                else
-                {
-                        // if no error, signed-in ok
-                        // go on to app
-                    print("successful sign in")
-                    self.performSegue(withIdentifier: "toTabBar", sender: nil)
-                    // NB *self*.performSegue needed here because in a closure code-block
-                }
-            }
             )
         }
         else
@@ -110,7 +120,18 @@ class signInVC: UIViewController {
                     print(user?.user.email) // NB extra .user  https://stackoverflow.com/a/50419010
                     // print(user?.email)
                     print("successful sign-up")
-                    self.performSegue(withIdentifier: "toTabBar", sender: nil)  // proceed into app
+                    // if already logged-in, remember details
+                    // remembering-logged-in-type function in AppDelegate.swift (qv)
+                    
+                    UserDefaults.standard.set(user!.user.email, forKey: "user") // NB extra .user  https://stackoverflow.com/a/50419010
+                    UserDefaults.standard.synchronize()     // must synchronise
+                    
+                    let delegate : AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                    
+                    delegate.rememberLogin()
+
+
+                    // self.performSegue(withIdentifier: "toTabBar", sender: nil)  // proceed into app
                 }
             }  // completion: NB pressing enter can expand into block if appropriate, as above wit (user, error) in ....
         
