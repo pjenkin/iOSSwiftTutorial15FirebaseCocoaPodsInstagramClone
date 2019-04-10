@@ -78,7 +78,30 @@ class uploadVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                         }
                         else
                         {
-                            print("url: \(String(describing: url!.absoluteURL))")
+                            // TODO: would be nice to do this with a callback for completion/completion handler e.g. https://medium.com/@abhimuralidharan/methods-with-completion-callback-in-ios-swift-fd889fca86dc
+                            
+                            let imageUrl = url!.absoluteString      // NSURL type inadmissible in Firebase db (not easily, anyway) so just get string of URL
+                            
+                            print("url: \(String(describing: imageUrl))")
+                            
+                            let post = ["image" : imageUrl, "postedBy" :
+                                Auth.auth().currentUser!.email!, "uuid" : self.uuid,
+                                "postText" : self.postComment.text]
+                                as [String: Any]
+                            // as dictionary ie key/value; unique post per post (as per filename)
+                            // set of 'fields' to save to Firebase database
+                            
+                        Database.database().reference().child("users").child((Auth.auth().currentUser?.uid)!).child("post").childByAutoId().setValue(post)
+                            
+                            // NB syntax Auth.auth(), Storage.storage(), Database.database()
+                            // form a 'table' called 'users', each user to have table of 'post' entries, each post (with automatic ID primary key) to have field values of url, postedBy, postText &c from app as above
+                            
+                            // assuming successful upload, reset controls of upload view
+                            self.postImage.image = UIImage(named: "select-picture.png")
+                            self.postComment.text = ""
+                            self.tabBarController?.selectedIndex = 0    // 0: viz the initial tab view controller, to the first ViewController ie feedVC - redirect thither
+                            
+                            
                         }
                     })
                     
