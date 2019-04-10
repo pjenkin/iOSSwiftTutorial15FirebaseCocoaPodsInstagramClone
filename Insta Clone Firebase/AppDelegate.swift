@@ -8,16 +8,7 @@
 
 import UIKit
 import Firebase // - cannot use XCode 8 or 9 with firebase as of 4/19 :(
-// import FirebaseAuth &c - has its own pod // - not done
 
-// would need to add to Podfile:
-/*
- pod 'Firebase/Core'
- pod 'Firebase/Auth'
- pod 'Firebase/Database'
- pod 'Firebase/Storage'
- */
-// and 'pod install' again
 
 
 @UIApplicationMain
@@ -32,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
-        FirebaseApp.configure()  // - cannot use XCode 8 or 9 with firebase as of 4/19 :(
+        FirebaseApp.configure()  // this line d'require GoogleService-Info.plist in project - working with Firebase registration
         return true
     }
 

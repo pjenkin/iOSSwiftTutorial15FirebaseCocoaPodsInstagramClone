@@ -19,14 +19,18 @@ target 'Insta Clone Firebase' do
 
 end
 
-#pod 'Firebase/Core'
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
+pod 'Firebase/Database'
+pod 'Firebase/Storage'
+# get set of Firebase infrastructure
 
 # PJ to try to use firebase in XCode 8.3, try https://github.com/firebase/firebase-ios-sdk/pull/1519  - https://github.com/firebase/firebase-ios-sdk/blob/master/README.md
 # pod 'FirebaseCore', :git => 'https://github.com/firebase/firebase-ios-sdk.git', :branch => 'master'
 # pod 'FirebaseFirestore', :git => 'https://github.com/firebase/firebase-ios-sdk.git', :branch => 'master'
 
 #  https://stackoverflow.com/q/47037713    https://stackoverflow.com/a/54296051
-pod 'Firebase/Core', '2.1.3'
+# pod 'Firebase/Core', '2.1.3'
 
 # https://github.com/invertase/react-native-firebase/issues/1764#issuecomment-452178852
 post_install do |installer|
