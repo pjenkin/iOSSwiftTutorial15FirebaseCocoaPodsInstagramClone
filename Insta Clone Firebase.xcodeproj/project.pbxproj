@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		64AD21ABDF93885709019D8C /* Pods_Insta_Clone_Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF091B7CC6D6B02FA555DB55 /* Pods_Insta_Clone_Firebase.framework */; };
 		8D3B291FE979FD01C17162D8 /* Pods_Insta_Clone_FirebaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5510D3F2D2FFF8EEE02DAC9 /* Pods_Insta_Clone_FirebaseUITests.framework */; };
+		94069C1F225F2DB500BBEAC4 /* postCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94069C1E225F2DB500BBEAC4 /* postCell.swift */; };
 		940E79C7225C8E83001A52DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940E79C6225C8E83001A52DF /* AppDelegate.swift */; };
 		940E79C9225C8E83001A52DF /* feedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940E79C8225C8E83001A52DF /* feedVC.swift */; };
 		940E79CB225C8E83001A52DF /* uploadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940E79CA225C8E83001A52DF /* uploadVC.swift */; };
@@ -47,6 +48,7 @@
 		6AA01C44A78977EA363B981F /* Pods-Insta Clone FirebaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insta Clone FirebaseTests.release.xcconfig"; path = "Target Support Files/Pods-Insta Clone FirebaseTests/Pods-Insta Clone FirebaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		75C1EFA41601A6DDEAA713BD /* Pods_Insta_Clone_FirebaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Insta_Clone_FirebaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83446B55E063496860A22362 /* Pods-Insta Clone FirebaseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insta Clone FirebaseUITests.debug.xcconfig"; path = "Target Support Files/Pods-Insta Clone FirebaseUITests/Pods-Insta Clone FirebaseUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		94069C1E225F2DB500BBEAC4 /* postCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postCell.swift; sourceTree = "<group>"; };
 		940E79C3225C8E83001A52DF /* Insta Clone Firebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Insta Clone Firebase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		940E79C6225C8E83001A52DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		940E79C8225C8E83001A52DF /* feedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = feedVC.swift; sourceTree = "<group>"; };
@@ -149,9 +151,10 @@
 				94DE94BC225DD98300B33DA2 /* GoogleService-Info.plist */,
 				940E79C6225C8E83001A52DF /* AppDelegate.swift */,
 				940E79C8225C8E83001A52DF /* feedVC.swift */,
+				94069C1E225F2DB500BBEAC4 /* postCell.swift */,
 				940E79CA225C8E83001A52DF /* uploadVC.swift */,
-				940E79CC225C8E83001A52DF /* Main.storyboard */,
 				940E79F6225C9145001A52DF /* signInVC.swift */,
+				940E79CC225C8E83001A52DF /* Main.storyboard */,
 				940E79CF225C8E83001A52DF /* Assets.xcassets */,
 				940E79D1225C8E83001A52DF /* LaunchScreen.storyboard */,
 				940E79D4225C8E83001A52DF /* Info.plist */,
@@ -343,6 +346,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Insta Clone Firebase/Pods-Insta Clone Firebase-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -350,6 +354,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -405,6 +410,7 @@
 				940E79C7225C8E83001A52DF /* AppDelegate.swift in Sources */,
 				940E79F7225C9145001A52DF /* signInVC.swift in Sources */,
 				940E79C9225C8E83001A52DF /* feedVC.swift in Sources */,
+				94069C1F225F2DB500BBEAC4 /* postCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

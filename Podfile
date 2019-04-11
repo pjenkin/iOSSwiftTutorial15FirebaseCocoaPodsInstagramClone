@@ -24,6 +24,8 @@ pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
 # get set of Firebase infrastructure
+pod 'SDWebImage'
+# from https://github.com/SDWebImage/SDWebImage  
 
 # PJ to try to use firebase in XCode 8.3, try https://github.com/firebase/firebase-ios-sdk/pull/1519  - https://github.com/firebase/firebase-ios-sdk/blob/master/README.md
 # pod 'FirebaseCore', :git => 'https://github.com/firebase/firebase-ios-sdk.git', :branch => 'master'
