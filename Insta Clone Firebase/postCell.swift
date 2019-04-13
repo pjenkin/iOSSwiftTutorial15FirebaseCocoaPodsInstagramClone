@@ -17,6 +17,7 @@ class postCell: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
     
     @IBOutlet weak var postComment: UITextView!
+    // @IBOutlet weak var postComment: UITextView!
     
     
     override func awakeFromNib() {

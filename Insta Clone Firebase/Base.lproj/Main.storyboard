@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,7 +42,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DqA-of-twh">
-                                                    <rect key="frame" x="64" y="91" width="247" height="128"/>
+                                                    <rect key="frame" x="64" y="59" width="247" height="128"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="H3G-Nb-tap"/>
                                                         <constraint firstAttribute="height" constant="128" id="gzV-pd-ocN"/>
@@ -49,22 +50,29 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kyw-Wj-NS8">
-                                                    <rect key="frame" x="15" y="20" width="42" height="68"/>
+                                                    <rect key="frame" x="15" y="11" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ls7-Li-2lX">
+                                                    <rect key="frame" x="64" y="244" width="240" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Kyw-Wj-NS8" firstAttribute="top" secondItem="rjI-wQ-8G1" secondAttribute="topMargin" constant="90" id="5Sz-NF-9O5"/>
-                                                <constraint firstItem="Kyw-Wj-NS8" firstAttribute="top" secondItem="rjI-wQ-8G1" secondAttribute="topMargin" constant="9" id="Bo2-YC-YBv"/>
-                                                <constraint firstItem="DqA-of-twh" firstAttribute="top" secondItem="Kyw-Wj-NS8" secondAttribute="bottom" constant="3" id="GTu-7X-3bf"/>
-                                                <constraint firstItem="DqA-of-twh" firstAttribute="top" secondItem="rjI-wQ-8G1" secondAttribute="topMargin" constant="80" id="YD3-Yz-yEd"/>
+                                                <constraint firstItem="DqA-of-twh" firstAttribute="top" secondItem="Kyw-Wj-NS8" secondAttribute="topMargin" constant="40" id="2Ic-ui-fAo"/>
+                                                <constraint firstItem="Kyw-Wj-NS8" firstAttribute="top" secondItem="rjI-wQ-8G1" secondAttribute="topMargin" id="DYO-3W-ma1"/>
                                                 <constraint firstItem="Kyw-Wj-NS8" firstAttribute="centerX" secondItem="rjI-wQ-8G1" secondAttribute="centerX" constant="-151.5" id="i6j-yq-AYU"/>
                                                 <constraint firstItem="DqA-of-twh" firstAttribute="leading" secondItem="rjI-wQ-8G1" secondAttribute="leadingMargin" constant="49" id="t6E-wd-UAF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="postComment" destination="ls7-Li-2lX" id="3U8-K4-6pm"/>
                                             <outlet property="postImage" destination="DqA-of-twh" id="lj1-zR-QY1"/>
                                             <outlet property="usernameLabel" destination="Kyw-Wj-NS8" id="tQJ-ad-qlt"/>
                                         </connections>

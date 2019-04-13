@@ -54,7 +54,8 @@ class feedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         // print(cell.postComment?.text)
         
-        // cell.postComment.text = postCommentArray[indexPath.row]
+        cell.postComment.text = postCommentArray[indexPath.row]
+        // cell.postComment.text = "hello"
         cell.usernameLabel.text = "hello" + userEmailArray[indexPath.row]
         cell.postImage.sd_setImage(with: URL(string: self.postImageUrlArray[indexPath.row]))
         // SDWeb Image https://github.com/SDWebImage/SDWebImage
