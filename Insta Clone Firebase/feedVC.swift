@@ -52,15 +52,22 @@ class feedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         print(postCommentArray[indexPath.row])
         print(userEmailArray[indexPath.row])
         
-        print(cell.postComment.text)
+        // print(cell.postComment?.text)
         
-        cell.postComment.text = postCommentArray[indexPath.row]
+        // cell.postComment.text = postCommentArray[indexPath.row]
         cell.usernameLabel.text = "hello" + userEmailArray[indexPath.row]
         cell.postImage.sd_setImage(with: URL(string: self.postImageUrlArray[indexPath.row]))
         // SDWeb Image https://github.com/SDWebImage/SDWebImage
         return cell;
     }
 
+    
+    
+    // set height of prototype cell programmatically using delegate function https://stackoverflow.com/a/46438939
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 450
+    }
+    
     
     // https://slicode.com/collectionview-inside-tableview-cell-part-1/ ?
     // https://www.techotopia.com/index.php/An_iOS_7_Storyboard-based_Collection_View_Tutorial
